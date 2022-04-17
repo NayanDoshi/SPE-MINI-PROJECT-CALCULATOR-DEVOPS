@@ -5,8 +5,6 @@ import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.swing.*;
-
 public class Calculator {
 
     private static final Logger logger = LogManager.getLogger(Calculator.class);
@@ -48,8 +46,6 @@ public class Calculator {
                     input1 = obj.nextDouble();
                     System.out.println("Square root of "+input1+" is : " + calculator.calculate_squareRoot(input1));
                     System.out.println("\n");
-
-
                     break;
                 case 3:
                     // power operation
@@ -81,31 +77,29 @@ public class Calculator {
 
 
     public double calculate_factoral(double input1) {
-        logger.info("[FACTORIAL] - " + input1);
         double result = calculate_factOfNum(input1);
-        logger.info("[RESULT - FACTORIAL] - " + result);
+        logger.info("Factorial - Input :" + input1 + " Output :" + result);
         return result;
     }
 
 
 
     public double calculate_squareRoot(double input1) {
-        logger.info("[SQ ROOT] - " + input1);
         double result = Math.sqrt(input1);
-        logger.info("[RESULT - SQ ROOT] - " + result);
+        logger.info("Square root - Input : " + input1 + " Output :" + result);
         return result;
     }
 
 
     public double calculate_power(double input1, double input2) {
-        logger.info("[POWER - " + input1 + " RAISED TO] " + input2);
+
         double result = Math.pow(input1,input2);
-        logger.info("[RESULT - POWER] - " + result);
+        logger.info("Power - Input :" + input1 + " " + input2 + " Output :" + result);
         return result;
     }
 
     public double calculate_naturalLog(double input1) {
-        logger.info("[NATURAL LOG] - " + input1);
+
         double result = 0;
         try {
 
@@ -119,7 +113,7 @@ public class Calculator {
         } catch (ArithmeticException error) {
             System.out.println("[EXCEPTION - LOG] - Cannot find log of negative numbers " + error.getLocalizedMessage());
         }
-        logger.info("[RESULT - NATURAL LOG] - " + result);
+        logger.info("Natural Log - Input :" + input1 + " Output :" + result);
         return result;
     }
     public double calculate_factOfNum(double num) {
